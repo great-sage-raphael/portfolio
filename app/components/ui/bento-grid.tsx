@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import ThreeScene from "../ThreeScene";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -21,7 +22,18 @@ export const BentoGrid = ({
   );
 };
 
-export const BentoGridItem = ({
+interface BentoGridItemProps {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  spareImg?: string;
+  img?: string;
+  id?: number;
+  titleClassName?: string;
+  imgClassName?: string;
+}
+
+export const BentoGridItem: React.FC<BentoGridItemProps> = ({
   className,
   title,
   description,
@@ -30,15 +42,6 @@ export const BentoGridItem = ({
   spareImg,
   titleClassName,
   id,
-}: {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  spareImg?: React.ReactNode;
-  img?: React.ReactNode;
-  id?: number;
-  titleClassName?: string;
-  imgClassName?: string;
 }) => {
   const isThreeD = id === 1 ? false : true;
 
@@ -56,38 +59,44 @@ export const BentoGridItem = ({
         "h-full w-full relative flex flex-col",
         id === 6 && "justify-center"
       )}>
-          
-        <div>
-        {isThreeD ? (
-            <div className="w-full h-full absolute inset-0">
-            <img 
-              src={img as string} 
-              className={cn(
-                "object-cover object-center w-full h-full",
-                imgClassName,
-                id === 5 && "absolute right-0 bottom-0 md:w-96 w-60"
-              )} 
-              alt="thumbnail"
-            />
+        {/* Main Content Container */}
+        <div className="w-full h-full absolute inset-0">
+          {isThreeD ? (
+            <div className={cn(
+              "relative w-full h-full",
+              imgClassName,
+              id === 5 && "absolute right-0 bottom-0 md:w-96 w-60"
+            )}>
+              {img && (
+                <Image 
+                  src={img}
+                  alt="Content thumbnail"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              )}
             </div>
-            
           ) : (
-            <div className="flex justify-center absolute insert-0 w-full h-full z-10">
-              <ThreeScene />
+            <div className=" inset-0 w-full h-full z-10">
+              <div className=" w-full h-full">
+                <ThreeScene />
+              </div>
             </div>
           )}
         </div>
-        
-        
+
+        {/* Spare Image Container */}
         {spareImg && (
           <div className={cn(
-            "absolute right-0 bottom-0",
-            id === 5 && "w-full opacity-80"
+            "absolute right-0 bottom-0 w-full h-full",
+            id === 5 && "opacity-80"
           )}>
-            <img
-              src={spareImg as string}
-              className="object-cover object-center w-full h-full"
-              alt="spare thumbnail"
+            <Image
+              src={spareImg}
+              alt="Secondary thumbnail"
+              fill
+              className="object-cover"
             />
           </div>
         )}
@@ -106,7 +115,7 @@ export const BentoGridItem = ({
           "relative h-full flex flex-col p-5 lg:p-10",
           titleClassName,
           "group-hover/bento:translate-x-2 transition duration-200",
-          id === 1 && "justify-end",
+          id === 1 && "justify-end mt-auto",
           id === 6 && "justify-center"
         )}>
           {/* Description */}
