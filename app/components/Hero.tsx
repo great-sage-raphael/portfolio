@@ -34,7 +34,7 @@ const Hero = () => {
                         
                             <div
                         className='flex items-center justify-center'>
-                        <a href="/about" >
+                        <a href="" >
                         <MagicButtom title={'show my work'} />  </a>     
                         </div>
                     </div>

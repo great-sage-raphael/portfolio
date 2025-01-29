@@ -12,6 +12,8 @@ import {
 
 import { ThreeDCard } from "./components/ThreeDCard";
 import Grid from "./components/Grid";
+import ThreeScene from "./components/ThreeScene";
+
 
 
 export default function Home() {
@@ -73,6 +75,7 @@ export default function Home() {
                <Hero />
                <Grid/>
                <ThreeDCard/>
+              <ThreeScene/>
          </div>
       </main>
   
