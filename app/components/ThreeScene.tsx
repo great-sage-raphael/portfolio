@@ -50,7 +50,7 @@ const ThreeScene = () => {
       "/models/macbook_pro_2021.glb", 
       (gltf) => {
         const model = gltf.scene;
-        model.position.set(-0.2, 0, 0);
+        model.position.set(-0.2, 0, -0.1);
         scene.add(model);
         setObject(model);
       },
