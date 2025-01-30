@@ -50,7 +50,7 @@ const ThreeScene = () => {
       "/models/macbook_pro_2021.glb", 
       (gltf) => {
         const model = gltf.scene;
-        model.position.set(0, 0, 0);
+        model.position.set(-0.2, 0, 0);
         scene.add(model);
         setObject(model);
       },
@@ -61,11 +61,11 @@ const ThreeScene = () => {
         console.error("Error loading the GLB model:", error);
       }
     );
-
-    // Cleanup function
+      const mountElement = mountRef.current;
+    
     return () => {
       // Store reference to mountRef.current before cleanup
-      const mountElement = mountRef.current;
+      //const mountElement = mountRef.current;
       
       // Clean up event listeners
       window.removeEventListener("resize", handleResize);
@@ -85,7 +85,7 @@ const ThreeScene = () => {
         sceneRef.current.clear();
       }
     };
-  }, []); // Empty dependency array is fine here as we're setting up the scene once
+  }, []);
 
   // Handle window resizing
   const handleResize = () => {

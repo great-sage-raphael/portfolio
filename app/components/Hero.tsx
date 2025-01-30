@@ -1,11 +1,12 @@
 import MagicButtom from './ui/MagicButtom';
 import { Spotlight } from './ui/Spotlight';
-import { FloatingDock } from './ui/floating-dock';
 import { TextGenerateEffect } from './ui/text-generate-effect';
 import { TextHoverEffect } from './ui/text-hover-effect';
 
 const Hero = () => {
-   
+  //  const showmyWork=()=>{
+
+  //  }
     const words=`Exploring the Boundaries of Creativity and Technology`
   return (
     <div className="pb-20 pt-36">   

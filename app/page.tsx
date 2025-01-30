@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Hero from "./components/Hero";
 import { FloatingDock } from "./components/ui/floating-dock";
 import {
@@ -12,7 +12,7 @@ import {
 
 import { ThreeDCard } from "./components/ThreeDCard";
 import Grid from "./components/Grid";
-import ThreeScene from "./components/ThreeScene";
+
 
 
 
@@ -27,11 +27,11 @@ export default function Home() {
     },
  
     {
-      title: "Products",
+      title: "My Works",
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#showmywork",
     },
     {
       title: "LinkedIn",
@@ -75,7 +75,6 @@ export default function Home() {
                <Hero />
                <Grid/>
                <ThreeDCard/>
-              <ThreeScene/>
          </div>
       </main>
   

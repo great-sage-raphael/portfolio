@@ -60,10 +60,11 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
         id === 6 && "justify-center"
       )}>
         {/* Main Content Container */}
-        <div className="w-full h-full absolute inset-0">
+        <div className="w-full h-full absolute ">
           {isThreeD ? (
+
             <div className={cn(
-              "relative w-full h-full",
+              "relative w-full h-full ",
               imgClassName,
               id === 5 && "absolute right-0 bottom-0 md:w-96 w-60"
             )}>
@@ -77,11 +78,12 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
                 />
               )}
             </div>
+
           ) : (
-            <div className=" inset-0 w-full h-full z-10">
-              <div className=" w-full h-full">
+            <div className="  w-full h-full z-10">
+              
                 <ThreeScene />
-              </div>
+              
             </div>
           )}
         </div>

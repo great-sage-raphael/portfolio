@@ -1,8 +1,11 @@
 import React from 'react'
 import { FaLocationArrow } from "react-icons/fa";
 const MagicButtom = ({
-    title,handleClick,otherClasses}:{
-        title:string;handleClick?:()=>void;otherClasses?:string;
+  
+    title,otherClasses}:{
+        title:string;
+       // handleClick?:()=>void;
+        otherClasses?:string;
     }
 ) => {
   return (
