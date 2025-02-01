@@ -2,6 +2,8 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import ThreeScene from "../ThreeScene";
 import Image from "next/image";
+import Worldmap from "../Worldmap";
+import { BackgroundBeams } from "../BackgroundBeam";
 
 export const BentoGrid = ({
   className,
@@ -44,7 +46,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
   id,
 }) => {
   const isThreeD = id === 1 ? false : true;
-
+  const isWorldmap =id === 2? false :true;
   return (
     <div
       className={cn(
@@ -59,10 +61,9 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
         "h-full w-full relative flex flex-col",
         id === 6 && "justify-center"
       )}>
-        {/* Main Content Container */}
+        {/* main container */}
         <div className="w-full h-full absolute ">
           {isThreeD ? (
-
             <div className={cn(
               "relative w-full h-full ",
               imgClassName,
@@ -80,15 +81,13 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
             </div>
 
           ) : (
-            <div className="  w-full h-full z-10">
-              
-                <ThreeScene />
-              
-            </div>
+            <BackgroundBeams/>
           )}
+          
+          
         </div>
 
-        {/* Spare Image Container */}
+        
         {spareImg && (
           <div className={cn(
             "absolute right-0 bottom-0 w-full h-full",
@@ -103,7 +102,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           </div>
         )}
 
-        {/* Background Animation for ID 6 */}
+        
         {id === 6 && (
           <div className="absolute inset-0">
             <BackgroundGradientAnimation>
@@ -111,27 +110,34 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
             </BackgroundGradientAnimation>
           </div>
         )}
-
-        {/* Content Section */}
+        {id ===2 &&(
+          <div className="absolute inset-0">
+            <Worldmap/>
+          </div>
+         
+        )}
+        
         <div className={cn(
           "relative h-full flex flex-col p-5 lg:p-10",
           titleClassName,
           "group-hover/bento:translate-x-2 transition duration-200",
           id === 1 && "justify-end mt-auto",
-          id === 6 && "justify-center"
+          id === 6 && "justify-center",
+          id === 2 && ' justify-end '
         )}>
-          {/* Description */}
+         
           {description && (
             <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10 mb-2">
               {description}
             </div>
           )}
           
-          {/* Title */}
+          
           <div className={cn(
             "font-sans font-bold z-10",
             id === 6 ? "text-center md:max-w-full max-w-60 text-lg lg:text-3xl" : "text-lg lg:text-3xl max-w-96",
-            id === 1 && "lg:max-w-xl"
+            id === 1 && "lg:max-w-xl",
+            id === 2 && "font-semibold "
           )}>
             {title}
           </div>

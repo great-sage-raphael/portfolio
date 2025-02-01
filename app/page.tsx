@@ -16,6 +16,8 @@ import Grid from "./components/Grid";
 
 
 
+
+
 export default function Home() {
   const links = [
     {
@@ -74,7 +76,8 @@ export default function Home() {
         <div className="w-full">
                <Hero />
                <Grid/>
-               <ThreeDCard/>
+               <ThreeDCard/> 
+               
          </div>
       </main>
   
