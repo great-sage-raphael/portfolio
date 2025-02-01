@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
-import ThreeScene from "../ThreeScene";
+
 import Image from "next/image";
 import Worldmap from "../Worldmap";
 import { BackgroundBeams } from "../BackgroundBeam";
@@ -46,7 +46,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
   id,
 }) => {
   const isThreeD = id === 1 ? false : true;
-  const isWorldmap =id === 2? false :true;
+  
   return (
     <div
       className={cn(
