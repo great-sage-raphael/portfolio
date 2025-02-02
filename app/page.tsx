@@ -77,6 +77,8 @@ export default function Home() {
                <Hero />
                <Grid/>
                <ThreeDCard/> 
+                
+              
                
          </div>
       </main>

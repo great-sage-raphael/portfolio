@@ -5,7 +5,7 @@ import ThreeScene from "./ThreeScene";
 export function BackgroundBeams() {
   return (
     <BackgroundBeamsWithCollision >
-        <div className="  w-full h-full z-10"> 
+        <div className="  w-full h-full "> 
               <ThreeScene />
             
           </div>

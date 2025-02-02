@@ -43,11 +43,11 @@ export function WorldMap({ dots = [], lineColor = "#0ea5e9" }: MapProps) {
   ) => {
     const midX = (start.x + end.x) / 2;
     const midY = Math.min(start.y, end.y) - 50;
-    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
+    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`
   };
 
   return (
-    <div className="w-full aspect-[2/1] dark:bg-black bg-white rounded-lg relative font-sans">
+    <div className="w-full aspect-[2/1] dark:bg-black bg-white rounded-lg relative font-sans ">
       {svgMap && (
         <Image
           src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}

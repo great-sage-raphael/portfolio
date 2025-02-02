@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
-
 import Image from "next/image";
 import Worldmap from "../Worldmap";
 import { BackgroundBeams } from "../BackgroundBeam";
+import AutoScroll from "./tech-stack";
 
 export const BentoGrid = ({
   className,
@@ -116,14 +116,22 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           </div>
          
         )}
+        { id===3 && (
+          <div className="flex items-center justify-center bg-dot-transparent text-white">
+          <AutoScroll />
+          </div>
+        )
+
+        }
         
         <div className={cn(
           "relative h-full flex flex-col p-5 lg:p-10",
           titleClassName,
           "group-hover/bento:translate-x-2 transition duration-200",
-          id === 1 && "justify-end mt-auto",
+          id === 1 && "justify-end mt-auto absl",
           id === 6 && "justify-center",
-          id === 2 && ' justify-end '
+          id === 2 && ' justify-end ',
+          id === 3 && ' absloute '
         )}>
          
           {description && (
