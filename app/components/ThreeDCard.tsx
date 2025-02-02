@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import Link from "next/link";
 
 
 export function ThreeDCard() {
@@ -47,7 +48,7 @@ export function ThreeDCard() {
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
         >
-          Movie reccomandation site
+          flappy bird game
         </CardItem>
         <CardItem
           as="p"
@@ -61,14 +62,16 @@ export function ThreeDCard() {
           rotateX={20}
           rotateZ={-10}
           className="w-full mt-4"
-        >
-          <Image
-            src="/projectImages/movierec.png"
+        ><Link href={`https://great-sage-raphael.github.io/game/webflaps2mob/`}>
+         <Image
+            src="/projectImages/flappybird.png"
             height="1000"
             width="1000"
             className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
+        </Link>
+         
         </CardItem>
        
       </CardBody>
@@ -79,7 +82,7 @@ export function ThreeDCard() {
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
         >
-          Movie reccomandation site
+          Startup submit site
         </CardItem>
         <CardItem
           as="p"
@@ -95,7 +98,7 @@ export function ThreeDCard() {
           className="w-full mt-4"
         >
           <Image
-            src="/projectImages/movierec.png"
+            src="/projectImages/startupsubmit.png"
             height="1000"
             width="1000"
             className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"

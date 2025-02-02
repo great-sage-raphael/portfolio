@@ -40,7 +40,7 @@ export default function Home() {
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.linkedin.com/in/vinayak-prakash-432082255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
     
     {
@@ -56,7 +56,7 @@ export default function Home() {
       icon: (
         <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://x.com/giyutomioka88?s=21",
     },
     {
       title: "GitHub",
